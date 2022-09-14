@@ -154,7 +154,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px 15px;
   color: white;
   border-radius: 15px;
   background: rgb(255, 255, 255);
@@ -197,7 +197,7 @@ button {
   }
   .card {
     flex-direction: column;
-    width: 30%;
+    width: 100%;
   }
 }
 
