@@ -10,102 +10,85 @@
     <title>Blog!</title>
   </head>
   <body>
-    <h2 class="mt-4 text-center bg-info text-light mb-5">Blog</h2>
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Difference between local storage and session storage in javascript?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>Local storage object-</strong> Stores data with no expiration date.We can use the setItem() method to set the data in local storage. This method takes two parameters, i.e., key and value. With this method, we can store value with a key. localStorage.setItem(key, value);To retrieve the data stored in it, we can use the getItem() method. This method takes only one parameter, i.e., the key whose value we need to access. localStorage.getItem(key);We can remove the data with the help of the removeItem() method, which is stored in memory about the key. localStorage.removeItem(key). The clear() method is used to clear all the data stored in it.<br> <strong>Session storage object </strong>- Stores data for one session (data is lost when the browser tab is closed). It is very similar to the local storage. Still, the main difference lies in the lifespan as it persists in the browser until its current tab is on. Once you close the tab or terminate it, the data on session storage also gets lost. We can also set and retrieve its data using setItem() and getItem() methods, respectively, similar to the local storage methods. <br>For example:<br>
-            sessionStorage.setItem(key, value);<br>
-            sessioinStorage.getItem(key);
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Difference between global scope and block scope in javascript?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>Block Scope</strong><br>The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable. Local scope contains things defined inside code blocks.<br>
-            <strong>Note:</strong>It is not a good practice to use global variables when they are not needed as every code block will have access to those variables.<br>
-            <strong>Global Scope</strong><br>Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}. Global variables can be accessed from anywhere in a JavaScript program. <br>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            What is the event loop in JavaScript and how does it work?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>Event Loop</strong><br> Event loop is just a guardian who keeps a good communication with Call Stack and Callback Queue. It checks if the call stack is free, then lets know the callback queue. Then Callback queue passes the callback function to Call stack to be executed. When all the callback functions are executed, the call stack is out and global execution context is free.<br>
-            <strong>Event Loop works in JavaScript</strong><br>The event loop is a process that waits for the Call Stack to be clear before pushing callbacks from the Task Queue to the Call Stack. Once the Stack is clear, the event loop triggers and checks the Task Queue for available callbacks.
-          </div>
-        </div>
-        
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            How to get undefined in javascript?
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>Syntax Error</strong><br> The Javascript SyntaxError is caused by the incorrect use of a pre-defined syntax. Syntax errors are detected while interpreting or parsing source code.
-            For example, a SyntaxError can occur if a closing brace (}) is left off when defining a Javascript function. <br>
-            <strong>ReferenceError</strong><br> This JavaScript exception variable is not defined occurs if there is a non-existent variable that is referenced somewhere.For example,Uncaught ReferenceError: str is not defined.<br>
-            <strong>TypeError</strong><br> Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.
-            <strong>Logical Errors</strong><br> Logic errors can be the most difficult type of errors to track down. These errors are not the result of a syntax or runtime error. Instead, they occur when you make a mistake in the logic that drives your script and you do not get the result you expected.<br>
-            You cannot catch those errors, because it depends on your business requirement what type of logic you want to put in your program.<br>
-            <strong>Runtime Errors</strong><br> A Runtime error, also called an exception, always occurs after compilation or interpretation i.e. during the execution of the program. Unlike syntax errors, these errors not only affect the thread where the error occurs but also affect the further statements in the code resulting in sudden termination or crashing of the executed application. One can make use of try-catch blocks to handle runtime errors. Majority of the errors like TypeError, RangeError, and other errors that we will discuss further, come under runtime errors.<br>
-            <strong>Evaluation Error</strong><br>The current JavaScript Engine or the EcmaScript specification does not throw this error. But the EvalError object still exists in the backward compatibility. This error indicates that an error regarding the global eval() function has occurred. <br>
-            <strong>Range Error</strong><br>This error occurs for two reasons when you call a recursive function that does not terminate and also when you pass a value to a function that is out of range. For instance, the function Number.toExponential(digits) accepts values between 0 and 100, if a value from outside this specified range is passed then the RangeError is thrown. <br>
-            <strong>URI Error</strong><br>In JavaScript, the “URIError: malformed URI sequence” is thrown at the command prompt when the given URI encoding or decoding was not unsuccessful. This happens when the argument passed to the decodeURI(), encodeURI(), encodeURIComponent() or decodeURIComponent() is not valid or an incorrect character(s) has been used.
-            console.log(decodeURI("%hsinp")); 
-        </div>
-        
-      </div>
-    </div>
-
-
-
-
-
-    <!-- <div class="row mx-5">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title fs-6 fw-bold">Difference between local storage and session storage in javascript?</h5>
-              <strong class="text-info"><u>Answer</u></strong>
-              <p class="card-text fs-6"><strong>Local storage object </strong>- Stores data with no expiration date.We can use the setItem() method to set the data in local storage. This method takes two parameters, i.e., key and value. With this method, we can store value with a key. localStorage.setItem(key, value);To retrieve the data stored in it, we can use the getItem() method. This method takes only one parameter, i.e., the key whose value we need to access. localStorage.getItem(key);We can remove the data with the help of the removeItem() method, which is stored in memory about the key. localStorage.removeItem(key);<br>
-                <strong>Session storage object </strong>- Stores data for one session (data is lost when the browser tab is closed)
-              </p>
-              <a href="#" class="btn btn-primary">See More</a>
+    <main>
+      <h2 class="mt-4 text-center bg-info text-light mb-5">Blog</h2>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Difference between local storage and session storage in javascript?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Local storage object-</strong> Stores data with no expiration date.We can use the setItem() method to set the data in local storage. This method takes two parameters, i.e., key and value. With this method, we can store value with a key. localStorage.setItem(key, value);To retrieve the data stored in it, we can use the getItem() method. This method takes only one parameter, i.e., the key whose value we need to access. localStorage.getItem(key);We can remove the data with the help of the removeItem() method, which is stored in memory about the key. localStorage.removeItem(key). The clear() method is used to clear all the data stored in it.<br> <strong>Session storage object </strong>- Stores data for one session (data is lost when the browser tab is closed). It is very similar to the local storage. Still, the main difference lies in the lifespan as it persists in the browser until its current tab is on. Once you close the tab or terminate it, the data on session storage also gets lost. We can also set and retrieve its data using setItem() and getItem() methods, respectively, similar to the local storage methods. <br>For example:<br>
+              sessionStorage.setItem(key, value);<br>
+              sessioinStorage.getItem(key);
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">See More</a>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Difference between global scope and block scope in javascript?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Block Scope</strong><br>The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable. Local scope contains things defined inside code blocks.<br>
+              <strong>Note:</strong>It is not a good practice to use global variables when they are not needed as every code block will have access to those variables.<br>
+              <strong>Global Scope</strong><br>Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}. Global variables can be accessed from anywhere in a JavaScript program. <br>
             </div>
           </div>
         </div>
-      </div> -->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              What is the event loop in JavaScript and how does it work?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Event Loop</strong><br> Event loop is just a guardian who keeps a good communication with Call Stack and Callback Queue. It checks if the call stack is free, then lets know the callback queue. Then Callback queue passes the callback function to Call stack to be executed. When all the callback functions are executed, the call stack is out and global execution context is free.<br>
+              <strong>Event Loop works in JavaScript</strong><br>The event loop is a process that waits for the Call Stack to be clear before pushing callbacks from the Task Queue to the Call Stack. Once the Stack is clear, the event loop triggers and checks the Task Queue for available callbacks.
+            </div>
+          </div>
+          
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              How to get undefined in javascript?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Syntax Error</strong><br> The Javascript SyntaxError is caused by the incorrect use of a pre-defined syntax. Syntax errors are detected while interpreting or parsing source code.
+              For example, a SyntaxError can occur if a closing brace (}) is left off when defining a Javascript function. <br>
+              <strong>ReferenceError</strong><br> This JavaScript exception variable is not defined occurs if there is a non-existent variable that is referenced somewhere.For example,Uncaught ReferenceError: str is not defined.<br>
+              <strong>TypeError</strong><br> Creates an instance representing an error that occurs when a variable or parameter is not of a valid type.
+              <strong>Logical Errors</strong><br> Logic errors can be the most difficult type of errors to track down. These errors are not the result of a syntax or runtime error. Instead, they occur when you make a mistake in the logic that drives your script and you do not get the result you expected.<br>
+              You cannot catch those errors, because it depends on your business requirement what type of logic you want to put in your program.<br>
+              <strong>Runtime Errors</strong><br> A Runtime error, also called an exception, always occurs after compilation or interpretation i.e. during the execution of the program. Unlike syntax errors, these errors not only affect the thread where the error occurs but also affect the further statements in the code resulting in sudden termination or crashing of the executed application. One can make use of try-catch blocks to handle runtime errors. Majority of the errors like TypeError, RangeError, and other errors that we will discuss further, come under runtime errors.<br>
+              <strong>Evaluation Error</strong><br>The current JavaScript Engine or the EcmaScript specification does not throw this error. But the EvalError object still exists in the backward compatibility. This error indicates that an error regarding the global eval() function has occurred. <br>
+              <strong>Range Error</strong><br>This error occurs for two reasons when you call a recursive function that does not terminate and also when you pass a value to a function that is out of range. For instance, the function Number.toExponential(digits) accepts values between 0 and 100, if a value from outside this specified range is passed then the RangeError is thrown. <br>
+              <strong>URI Error</strong><br>In JavaScript, the “URIError: malformed URI sequence” is thrown at the command prompt when the given URI encoding or decoding was not unsuccessful. This happens when the argument passed to the decodeURI(), encodeURI(), encodeURIComponent() or decodeURIComponent() is not valid or an incorrect character(s) has been used.
+              console.log(decodeURI("%hsinp")); 
+          </div>
+          
+        </div>
+      </div>
+         <!-- footer -->
+      <footer class="p-3 mt-3 bg-dark text-center text-white position-relative">
+        <div class="container">
+            <h2 class="pt-5 fw-bold">Programming-Hero.</h2>
+            <p>Level-4, 34, Awal Centre, Banani, Dhaka</p>
+            <p> Official: web@programming-hero.com</p>
+            <p>Helpline : 01322810873</p>
+        </div>
+    </footer>
+    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   </body>
